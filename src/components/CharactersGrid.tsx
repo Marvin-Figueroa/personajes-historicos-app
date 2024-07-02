@@ -1,16 +1,14 @@
 import { DataView } from "primereact/dataview";
 import CharacterCard from "./CharacterCard";
-import useCharacters, { Character } from "../hooks/useCharacters";
+import { Character } from "../hooks/useCharacters";
 import CharacterCardSkeleton from "./CharacterCardSkeleton";
-import { CharacterQuery } from "../App";
 
 interface Props {
-  characterQuery: CharacterQuery;
+  characters: Character[];
+  loading: boolean;
 }
 
-const CharactersGrid = ({ characterQuery }: Props) => {
-  const { data: characters, loading } = useCharacters(characterQuery);
-
+const CharactersGrid = ({ characters, loading }: Props) => {
   const characterTemplate = (character: Character) => (
     <div
       className="col-12 sm:col-6 md:col-4 lg:col-3 xxl:col-2 p-4"

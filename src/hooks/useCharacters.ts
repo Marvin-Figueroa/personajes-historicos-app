@@ -18,6 +18,7 @@ const useCharacters = (characterQuery: CharacterQuery) =>
       params: {
         name_like: characterQuery.name,
         _page: characterQuery.pageNumber,
+        _limit: characterQuery.pageSize,
       },
     },
     [characterQuery]
