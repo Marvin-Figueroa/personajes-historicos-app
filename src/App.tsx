@@ -27,16 +27,34 @@ function App() {
     });
   };
 
+  const handleSearch = (search: string) => {
+    setCharacterQuery({ ...characterQuery, name: search });
+  };
+
   return (
-    <>
-      <NavBar />
-      <CharactersGrid loading={loading} characters={data.results} />
-      <Pagination
-        characterQuery={characterQuery}
-        onPageChange={handlePageChange}
-        itemsCount={data.count}
-      />
-    </>
+    <div className="flex flex-column min-h-screen">
+      <NavBar onSearch={handleSearch} disabled={loading} />
+      <div className="flex flex-grow-1 flex-column">
+        {data.results?.length > 0 ? (
+          <CharactersGrid loading={loading} characters={data.results} />
+        ) : (
+          <div className="flex align-items-center justify-content-center flex-grow-1">
+            <p className="text-2xl text-purple-500">
+              No characters were found 😢
+            </p>
+          </div>
+        )}
+      </div>
+      {data.results?.length > 0 && (
+        <div className="flex justify-content-center my-4">
+          <Pagination
+            characterQuery={characterQuery}
+            onPageChange={handlePageChange}
+            itemsCount={data.count}
+          />
+        </div>
+      )}
+    </div>
   );
 }
 

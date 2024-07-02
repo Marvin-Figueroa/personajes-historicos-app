@@ -30,7 +30,7 @@ const CharactersGrid = ({ characters, loading }: Props) => {
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
   return (
-    <div className="card">
+    <>
       {loading && (
         <DataView
           value={skeletons}
@@ -43,7 +43,7 @@ const CharactersGrid = ({ characters, loading }: Props) => {
         itemTemplate={characterTemplate}
         layout="grid"
       />
-    </div>
+    </>
   );
 };
 
