@@ -28,7 +28,12 @@ function App() {
   };
 
   const handleSearch = (search: string) => {
-    setCharacterQuery({ ...characterQuery, name: search });
+    setCharacterQuery({
+      ...characterQuery,
+      name: search,
+      pageNumber: 1,
+      pageSize: 8,
+    });
   };
 
   return (

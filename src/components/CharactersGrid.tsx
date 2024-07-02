@@ -31,18 +31,19 @@ const CharactersGrid = ({ characters, loading }: Props) => {
 
   return (
     <>
-      {loading && (
+      {loading ? (
         <DataView
           value={skeletons}
           itemTemplate={skeletonTemplate}
           layout="grid"
         />
+      ) : (
+        <DataView
+          value={characters}
+          itemTemplate={characterTemplate}
+          layout="grid"
+        />
       )}
-      <DataView
-        value={characters}
-        itemTemplate={characterTemplate}
-        layout="grid"
-      />
     </>
   );
 };

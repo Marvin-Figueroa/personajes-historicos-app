@@ -21,22 +21,25 @@ const useData = <T>(
       const controller = new AbortController();
 
       setLoading(true);
-      apiClient
-        .get<T[]>(endpoint, {
-          signal: controller.signal,
-          ...requestConfig,
-        })
-        .then((res) =>
-          setData({
-            count: parseInt(res.headers["x-total-count"]),
-            results: res.data,
+
+      setTimeout(() => {
+        apiClient
+          .get<T[]>(endpoint, {
+            signal: controller.signal,
+            ...requestConfig,
           })
-        )
-        .catch((error) => {
-          if (error instanceof CanceledError) return;
-          setError(error.message);
-        })
-        .finally(() => setLoading(false));
+          .then((res) =>
+            setData({
+              count: parseInt(res.headers["x-total-count"]),
+              results: res.data,
+            })
+          )
+          .catch((error) => {
+            if (error instanceof CanceledError) return;
+            setError(error.message);
+          })
+          .finally(() => setLoading(false));
+      }, 2000);
 
       return () => controller.abort();
     },
