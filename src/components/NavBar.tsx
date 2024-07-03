@@ -1,14 +1,8 @@
 import { Toolbar } from "primereact/toolbar";
 import Logo from "./Logo";
-import SearchBar from "./SearchBar";
 import { Button } from "primereact/button";
 
-interface Props {
-  onSearch: (value: string) => void;
-  disabled: boolean;
-}
-
-const NavBar = ({ onSearch, disabled }: Props) => {
+const NavBar = () => {
   const endContent = (
     <Button
       icon="pi pi-plus"
@@ -20,15 +14,12 @@ const NavBar = ({ onSearch, disabled }: Props) => {
 
   return (
     <Toolbar
-      style={{ alignItems: "center", borderBottom: "1px solid #333" }}
+      style={{
+        alignItems: "center",
+        borderBottom: "1px solid #333",
+        padding: "10px",
+      }}
       start={Logo}
-      center={
-        <SearchBar
-          placeholder="Search by name..."
-          onSearch={onSearch}
-          disabled={disabled}
-        />
-      }
       end={endContent}
       className="bg-gray-900 shadow-2"
     />

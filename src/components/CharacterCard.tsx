@@ -1,7 +1,7 @@
 import { Card } from "primereact/card";
-import { Character } from "../services/characterService";
 import { Button } from "primereact/button";
 import { getTruncatedText } from "../utils/utilities";
+import { Character } from "../hooks/useCharacters";
 
 interface Props {
   character: Character;

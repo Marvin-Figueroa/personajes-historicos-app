@@ -7,13 +7,15 @@ interface Props {
   placeholder?: string;
   onSearch: (value: string) => void;
   disabled: boolean;
+  className: string;
 }
 
-const SearchBar = ({ placeholder, onSearch, disabled }: Props) => {
+const SearchBar = ({ placeholder, onSearch, disabled, className }: Props) => {
   const ref = useRef<HTMLInputElement>(null);
 
   return (
     <form
+      className={className}
       onSubmit={(event) => {
         event.preventDefault();
         if (ref.current?.value.trim()) onSearch(ref.current.value.trim());
