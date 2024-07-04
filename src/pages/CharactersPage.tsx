@@ -17,7 +17,7 @@ const CharactersPage = () => {
     pageSize: 8,
   });
 
-  const { data, loading } = useCharacters(characterQuery);
+  const { data, isLoading, error } = useCharacters(characterQuery);
 
   const handlePageChange = (event: PaginatorPageChangeEvent) => {
     setCharacterQuery({
@@ -36,6 +36,11 @@ const CharactersPage = () => {
     });
   };
 
+  if (error)
+    return (
+      <h3 className="text-2xl text-orange-700 text-center">{error.message}</h3>
+    );
+
   return (
     <>
       <div className="flex flex-grow-1 flex-column">
@@ -46,10 +51,10 @@ const CharactersPage = () => {
           className="mb-4 align-self-center"
           placeholder="Search by name..."
           onSearch={handleSearch}
-          disabled={loading}
+          disabled={isLoading}
         />
-        {data.results?.length > 0 ? (
-          <CharactersGrid loading={loading} characters={data.results} />
+        {data?.results && data.results.length > 0 ? (
+          <CharactersGrid loading={isLoading} characters={data.results} />
         ) : (
           <div className="flex align-items-center justify-content-center flex-grow-1">
             <p className="text-2xl text-purple-500">
@@ -58,7 +63,7 @@ const CharactersPage = () => {
           </div>
         )}
       </div>
-      {data.results?.length > 0 && (
+      {data?.results && data.results.length > 0 && (
         <div className="flex justify-content-center my-4">
           <Pagination
             characterQuery={characterQuery}
