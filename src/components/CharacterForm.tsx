@@ -9,8 +9,9 @@ import { Calendar } from "primereact/calendar";
 import { Toast } from "primereact/toast";
 
 import { z } from "zod";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import useAddCharacter from "../hooks/useAddCharacter";
+import useCharactersAppStore from "../state/store";
 
 type FormData = z.infer<typeof characterSchema>;
 
@@ -21,10 +22,26 @@ const CharacterForm = () => {
     reset,
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isDirty },
   } = useForm<FormData>({
+    defaultValues: {
+      biography: "",
+      birthDate: undefined,
+      deathDate: undefined,
+      name: "",
+      nationality: "",
+      imageUrl: "",
+      occupation: "",
+    },
     resolver: zodResolver(characterSchema),
   });
+
+  const { setIsFormDirty } = useCharactersAppStore();
+
+  // Actualizar el estado del store cuando isDirty cambia
+  useEffect(() => {
+    setIsFormDirty(isDirty);
+  }, [isDirty]);
 
   const addCharacter = useAddCharacter(
     () => {
@@ -35,6 +52,7 @@ const CharacterForm = () => {
       });
 
       reset();
+      setIsFormDirty(false);
     },
     () => {
       toast.current?.show({

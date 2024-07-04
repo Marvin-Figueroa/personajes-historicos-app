@@ -4,14 +4,17 @@ import { Button } from "primereact/button";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ConfirmDialog } from "primereact/confirmdialog";
 import { confirmDialog } from "primereact/confirmdialog";
+import useCharactersAppStore from "../state/store";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { isFormDirty } = useCharactersAppStore();
 
   const confirmNavigation = () => {
     confirmDialog({
-      message: "Are you sure you want to cancel and return to the home page?",
+      message:
+        "Are you sure you want to cancel and return to the home page? All changes will be lost.",
       header: "Confirmation",
       icon: "pi pi-exclamation-triangle",
       defaultFocus: "reject",
@@ -22,9 +25,11 @@ const NavBar = () => {
   const endContent = (
     <Button
       onClick={() =>
-        location.pathname === "/new-character"
+        location.pathname === "/new-character" && isFormDirty
           ? confirmNavigation()
-          : navigate("/new-character")
+          : navigate(
+              location.pathname === "/new-character" ? "/" : "/new-character"
+            )
       }
       icon={
         location.pathname === "/new-character"
