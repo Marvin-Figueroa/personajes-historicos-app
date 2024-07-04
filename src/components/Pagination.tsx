@@ -1,5 +1,5 @@
 import { Paginator, PaginatorPageChangeEvent } from "primereact/paginator";
-import { CharacterQuery } from "../App";
+import { CharacterQuery } from "../pages/CharactersPage";
 
 interface Props {
   onPageChange: (event: PaginatorPageChangeEvent) => void;
