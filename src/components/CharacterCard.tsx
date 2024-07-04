@@ -1,14 +1,15 @@
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { getTruncatedText } from "../utils/utilities";
-import { Character } from "../hooks/useCharacters";
 import fallbackImg from "../assets/placeholder.jpg";
 import { useState } from "react";
+import { Character } from "../services/characterService";
 
 interface Props {
   character: Character;
+  onDelete: (id: number) => void;
 }
-const CharacterCard = ({ character }: Props) => {
+const CharacterCard = ({ character, onDelete }: Props) => {
   const [imgSrc, setImgSrc] = useState(character.imageUrl);
 
   return (
@@ -33,6 +34,7 @@ const CharacterCard = ({ character }: Props) => {
             label="Delete"
             severity="danger"
             aria-label="Delete"
+            onClick={() => onDelete(character.id)}
           />
         </div>
       }

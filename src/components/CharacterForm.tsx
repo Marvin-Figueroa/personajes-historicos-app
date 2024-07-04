@@ -47,8 +47,8 @@ const CharacterForm = () => {
   );
 
   const onSubmit = (data: FormData) => {
-    console.log(data);
-    addCharacter.mutate(data);
+    const newCharacter = { id: 0, ...data };
+    addCharacter.mutate(newCharacter);
   };
 
   return (
@@ -176,12 +176,7 @@ const CharacterForm = () => {
           </div>
         </div>
         <div className="card flex justify-content-center">
-          <Button
-            disabled={addCharacter.isPending}
-            type="submit"
-            label={addCharacter.isPending ? "Submitting..." : "Submit"}
-            className="mt-4 w-3"
-          />
+          <Button type="submit" label="Submit" className="mt-4 w-3" />
         </div>
       </form>
     </>

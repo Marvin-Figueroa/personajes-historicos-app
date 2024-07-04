@@ -1,20 +1,21 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { CACHE_KEY_CHARACTERS } from "../utils/constants";
-import characterService, { Character } from "../services/characterService";
+import { Character } from "../services/characterService";
+import characterService from "../services/characterService";
 
-interface AddCharacterContext {
+interface DeleteCharacterContext {
   previousCharacters: Character[];
 }
 
-const useAddCharacter = (
-  onAddSuccess: () => void,
-  onAddFailure: () => void
+const useDeleteCharacter = (
+  onDeleteSuccess: () => void,
+  onDeleteFailure: () => void
 ) => {
   const queryClient = useQueryClient();
 
-  return useMutation<Character, Error, Character, AddCharacterContext>({
-    mutationFn: characterService.create,
-    onMutate: async (newCharacter) => {
+  return useMutation<void, Error, number, DeleteCharacterContext>({
+    mutationFn: characterService.delete, // error here
+    onMutate: async (characterId) => {
       // Cancelar cualquier actualización en curso para evitar conflictos
       await queryClient.cancelQueries({ queryKey: CACHE_KEY_CHARACTERS });
 
@@ -23,31 +24,26 @@ const useAddCharacter = (
         queryClient.getQueryData<Character[]>(CACHE_KEY_CHARACTERS) || [];
 
       // Optimistamente actualizar la caché
-      queryClient.setQueryData<Character[]>(
-        CACHE_KEY_CHARACTERS,
-        (old = []) => [...old, newCharacter]
+      queryClient.setQueryData<Character[]>(CACHE_KEY_CHARACTERS, (old = []) =>
+        old.filter((character) => character.id !== characterId)
       );
 
       // Retornar el snapshot para revertirlo en caso de error
       return { previousCharacters };
     },
-    onSuccess: (_savedCharacter, _newCharacter) => {
-      onAddSuccess();
-
-      queryClient.invalidateQueries({
-        queryKey: CACHE_KEY_CHARACTERS,
-      });
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: CACHE_KEY_CHARACTERS });
+      onDeleteSuccess();
     },
-    onError: (_error, _newCharacter, context) => {
+    onError: (_error, _characterId, context) => {
       // Revertir la actualización optimista usando el snapshot anterior
       queryClient.setQueryData<Character[]>(
         CACHE_KEY_CHARACTERS,
         context?.previousCharacters
       );
-
-      onAddFailure();
+      onDeleteFailure();
     },
   });
 };
 
-export default useAddCharacter;
+export default useDeleteCharacter;
