@@ -1,275 +1,302 @@
 {
-    "characters" : [
-        {
-          "id": 1,
-          "name": "Leonardo da Vinci",
-          "birthDate": "1452-04-15",
-          "deathDate": "1519-05-02",
-          "nationality": "Italian",
-          "biography": "Leonardo da Vinci was a polymath of the Italian Renaissance whose areas of interest included invention, painting, sculpting, architecture, science, music, mathematics, engineering, literature, anatomy, geology, astronomy, botany, paleontology, and cartography. He is widely considered one of the most diversely talented individuals ever to have lived.",
-          "imageUrl": "src/assets/characters/leonardo.jpg"
-        },
-        {
-          "id": 2,
-          "name": "Albert Einstein",
-          "birthDate": "1879-03-14",
-          "deathDate": "1955-04-18",
-          "nationality": "German",
-          "biography": "Albert Einstein was a theoretical physicist who developed the theory of relativity, one of the two pillars of modern physics. His work is also known for its influence on the philosophy of science.",
-          "imageUrl": "src/assets/characters/einstein.jpg"
-        },
-        {
-          "id": 3,
-          "name": "Isaac Newton",
-          "birthDate": "1643-01-04",
-          "deathDate": "1727-03-31",
-          "nationality": "English",
-          "biography": "Isaac Newton was an English mathematician, physicist, astronomer, theologian, and author who is widely recognized as one of the most influential scientists of all time and a key figure in the scientific revolution.",
-          "imageUrl": "src/assets/characters/newton.jpg"
-        },
-        {
-          "id": 4,
-          "name": "Marie Curie",
-          "birthDate": "1867-11-07",
-          "deathDate": "1934-07-04",
-          "nationality": "Polish",
-          "biography": "Marie Curie was a physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize, and the only person to win Nobel Prizes in two different scientific fields.",
-          "imageUrl": "src/assets/characters/curie.jpg"
-        },
-        {
-          "id": 5,
-          "name": "Mahatma Gandhi",
-          "birthDate": "1869-10-02",
-          "deathDate": "1948-01-30",
-          "nationality": "Indian",
-          "biography": "Mahatma Gandhi was an Indian lawyer, anti-colonial nationalist, and political ethicist who employed nonviolent resistance to lead the successful campaign for India's independence from British rule.",
-          "imageUrl": "src/assets/characters/gandhi.jpg"
-        },
-        {
-          "id": 6,
-          "name": "Martin Luther King Jr.",
-          "birthDate": "1929-01-15",
-          "deathDate": "1968-04-04",
-          "nationality": "American",
-          "biography": "Martin Luther King Jr. was an American Baptist minister and activist who became the most visible spokesperson and leader in the civil rights movement from 1955 until his assassination in 1968.",
-          "imageUrl": "src/assets/characters/mlk.jpg"
-        },
-        {
-          "id": 7,
-          "name": "Nelson Mandela",
-          "birthDate": "1918-07-18",
-          "deathDate": "2013-12-05",
-          "nationality": "South African",
-          "biography": "Nelson Mandela was a South African anti-apartheid revolutionary, political leader, and philanthropist who served as President of South Africa from 1994 to 1999. He was the country's first black head of state and the first elected in a fully representative democratic election.",
-          "imageUrl": "src/assets/characters/mandela.jpg"
-        },
-        {
-          "id": 8,
-          "name": "William Shakespeare",
-          "birthDate": "1564-04-26",
-          "deathDate": "1616-04-23",
-          "nationality": "English",
-          "biography": "William Shakespeare was an English playwright, poet, and actor, widely regarded as the greatest writer in the English language and the world's greatest dramatist.",
-          "imageUrl": "src/assets/characters/shakespeare.jpg"
-        },
-        {
-          "id": 9,
-          "name": "Abraham Lincoln",
-          "birthDate": "1809-02-12",
-          "deathDate": "1865-04-15",
-          "nationality": "American",
-          "biography": "Abraham Lincoln was an American lawyer and politician who served as the 16th president of the United States from 1861 until his assassination in 1865. Lincoln led the nation through the American Civil War and preserved the Union.",
-          "imageUrl": "src/assets/characters/lincoln.webp"
-        },
-        {
-          "id": 10,
-          "name": "George Washington",
-          "birthDate": "1732-02-22",
-          "deathDate": "1799-12-14",
-          "nationality": "American",
-          "biography": "George Washington was an American political leader, military general, statesman, and Founding Father who served as the first president of the United States from 1789 to 1797.",
-          "imageUrl": "src/assets/characters/washington.jpg"
-        },
-        {
-          "id": 11,
-          "name": "Napoleon Bonaparte",
-          "birthDate": "1769-08-15",
-          "deathDate": "1821-05-05",
-          "nationality": "French",
-          "biography": "Napoleon Bonaparte was a French military and political leader who rose to prominence during the French Revolution and led several successful campaigns during the Revolutionary Wars.",
-          "imageUrl": "src/assets/characters/napoleon.jpg"
-        },
-        {
-          "id": 12,
-          "name": "Galileo Galilei",
-          "birthDate": "1564-02-15",
-          "deathDate": "1642-01-08",
-          "nationality": "Italian",
-          "biography": "Galileo Galilei was an Italian astronomer, physicist and engineer, sometimes described as a polymath. Galileo has been called the 'father' of observational astronomy, modern physics, the scientific method, and modern science.",
-          "imageUrl": "src/assets/characters/galileo.jpg"
-        },
-        {
-          "id": 13,
-          "name": "Christopher Columbus",
-          "birthDate": "1451-10-31",
-          "deathDate": "1506-05-20",
-          "nationality": "Italian",
-          "biography": "Christopher Columbus was an Italian explorer and navigator who completed four voyages across the Atlantic Ocean, opening the way for the widespread European exploration and colonization of the Americas.",
-          "imageUrl": "src/assets/characters/columbus.jpg"
-        },
-        {
-          "id": 14,
-          "name": "Thomas Edison",
-          "birthDate": "1847-02-11",
-          "deathDate": "1931-10-18",
-          "nationality": "American",
-          "biography": "Thomas Edison was an American inventor and businessman who has been described as America's greatest inventor. He developed many devices in fields such as electric power generation, mass communication, sound recording, and motion pictures.",
-          "imageUrl": "src/assets/characters/edison.jpg"
-        },
-        {
-          "id": 15,
-          "name": "Nikola Tesla",
-          "birthDate": "1856-07-10",
-          "deathDate": "1943-01-07",
-          "nationality": "Serbian-American",
-          "biography": "Nikola Tesla was a Serbian-American inventor, electrical engineer, mechanical engineer, and futurist who is best known for his contributions to the design of the modern alternating current (AC) electricity supply system.",
-          "imageUrl": "src/assets/characters/tesla.jpeg"
-        },
-        {
-          "id": 16,
-          "name": "Pablo Picasso",
-          "birthDate": "1881-10-25",
-          "deathDate": "1973-04-08",
-          "nationality": "Spanish",
-          "biography": "Pablo Picasso was a Spanish painter, sculptor, printmaker, ceramicist, and theatre designer who spent most of his adult life in France. He is regarded as one of the most influential artists of the 20th century.",
-          "imageUrl": "src/assets/characters/picasso.jpg"
-        },
-        {
-          "id": 17,
-          "name": "Sigmund Freud",
-          "birthDate": "1856-05-06",
-          "deathDate": "1939-09-23",
-          "nationality": "Austrian",
-          "biography": "Sigmund Freud was an Austrian neurologist and the founder of psychoanalysis, a clinical method for treating psychopathology through dialogue between a patient and a psychoanalyst.",
-          "imageUrl": "src/assets/characters/freud.jpg"
-        },
-        {
-          "id": 18,
-          "name": "Ludwig van Beethoven",
-          "birthDate": "1770-12-17",
-          "deathDate": "1827-03-26",
-          "nationality": "German",
-          "biography": "Ludwig van Beethoven was a German composer and pianist. Beethoven remains one of the most admired composers in the history of Western music; his works rank amongst the most performed of the classical music repertoire.",
-          "imageUrl": "src/assets/characters/beethoven.jpg"
-        },
-        {
-          "id": 19,
-          "name": "Charles Darwin",
-          "birthDate": "1809-02-12",
-          "deathDate": "1882-04-19",
-          "nationality": "British",
-          "biography": "Charles Darwin was an English naturalist, geologist and biologist, best known for his contributions to the science of evolution. His proposition that all species of life have descended from common ancestors is now widely accepted and considered a foundational concept in science.",
-          "imageUrl": "src/assets/characters/darwin.jpg"
-        },
-        {
-          "id": 20,
-          "name": "Malala Yousafzai",
-          "birthDate": "1997-07-12",
-          "deathDate": null,
-          "nationality": "Pakistani",
-          "biography": "Malala Yousafzai, also known mononymously as Malala, is a Pakistani activist for female education and the youngest Nobel Prize laureate. She is known for her advocacy of education for women and children in her native Swat Valley in Khyber Pakhtunkhwa, northwest Pakistan, where the local Taliban had at times banned girls from attending school.",
-          "imageUrl": "src/assets/characters/malala.jpg"
-        },
-        {
-          "id": 21,
-          "name": "Vincent van Gogh",
-          "birthDate": "1853-03-30",
-          "deathDate": "1890-07-29",
-          "nationality": "Dutch",
-          "biography": "Vincent van Gogh was a Dutch post-impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade, he created about 2,100 artworks, including about 860 oil paintings, most of them in the last two years of his life.",
-          "imageUrl": "src/assets/characters/vangogh.jpg"
-        },
-        {
-          "id": 22,
-          "name": "Anne Frank",
-          "birthDate": "1929-06-12",
-          "deathDate": "1945-02-00",
-          "nationality": "German-Dutch",
-          "biography": "Anne Frank was a German-Dutch diarist of Jewish heritage. One of the most discussed Jewish victims of the Holocaust, she gained fame posthumously with the publication of 'The Diary of a Young Girl', in which she documents her life in hiding from 1942 to 1944, during the German occupation of the Netherlands in World War II.",
-          "imageUrl": "src/assets/characters/annefrank.jpg"
-        },
-        {
-          "id": 23,
-          "name": "Frida Kahlo",
-          "birthDate": "1907-07-06",
-          "deathDate": "1954-07-13",
-          "nationality": "Mexican",
-          "biography": "Frida Kahlo was a Mexican painter known for her many portraits, self-portraits, and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class, and race in Mexican society.",
-          "imageUrl": "src/assets/characters/kahlo.jpg"
-        },
-        {
-          "id": 24,
-          "name": "Simon Bolivar",
-          "birthDate": "1783-07-24",
-          "deathDate": "1830-12-17",
-          "nationality": "Venezuelan",
-          "biography": "Simón Bolívar was a Venezuelan military and political leader who led what are currently the countries of Venezuela, Bolivia, Colombia, Ecuador, Peru, and Panama to independence from the Spanish Empire.",
-          "imageUrl": "src/assets/characters/bolivar.png"
-        },
-        {
-          "id": 25,
-          "name": "Fidel Castro",
-          "birthDate": "1926-08-13",
-          "deathDate": "2016-11-25",
-          "nationality": "Cuban",
-          "biography": "Fidel Castro was a Cuban communist revolutionary and politician who was the leader of Cuba from 1959 to 2008. He served as Prime Minister from 1959 to 1976 and President from 1976 to 2008.",
-          "imageUrl": "src/assets/characters/castro.jpg"
-        },
-        {
-          "id": 26,
-          "name": "Che Guevara",
-          "birthDate": "1928-06-14",
-          "deathDate": "1967-10-09",
-          "nationality": "Argentine",
-          "biography": "Che Guevara was an Argentine Marxist revolutionary, physician, author, guerrilla leader, diplomat, and military theorist. A major figure of the Cuban Revolution, his stylized visage has become a ubiquitous countercultural symbol of rebellion and global insignia in popular culture.",
-          "imageUrl": "src/assets/characters/che.jpg"
-        },
-        {
-          "id": 27,
-          "name": "Mother Teresa",
-          "birthDate": "1910-08-26",
-          "deathDate": "1997-09-05",
-          "nationality": "Albanian-Indian",
-          "biography": "Mother Teresa, known in the Roman Catholic Church as Saint Teresa of Calcutta, was an Albanian-Indian Roman Catholic nun and missionary. She was born in Skopje (now the capital of North Macedonia), then part of the Kosovo Vilayet of the Ottoman Empire.",
-          "imageUrl": "src/assets/characters/teresa.jpg"
-        },
-        {
-          "id": 28,
-          "name": "John F. Kennedy",
-          "birthDate": "1917-05-29",
-          "deathDate": "1963-11-22",
-          "nationality": "American",
-          "biography": "John F. Kennedy, often referred to by his initials JFK, was an American politician who served as the 35th president of the United States from January 1961 until his assassination in November 1963.",
-          "imageUrl": "src/assets/characters/jfk.webp"
-        },
-        {
-          "id": 29,
-          "name": "Steve Jobs",
-          "birthDate": "1955-02-24",
-          "deathDate": "2011-10-05",
-          "nationality": "American",
-          "biography": "Steve Jobs was an American business magnate, industrial designer, investor, and media proprietor. He was the chairman, chief executive officer (CEO), and co-founder of Apple Inc.; the chairman and majority shareholder of Pixar; a member of The Walt Disney Company's board of directors following its acquisition of Pixar; and the founder, chairman, and CEO of NeXT.",
-          "imageUrl": "src/assets/characters/jobs.jpg"
-        },
-        {
-          "id": 30,
-          "name": "Elon Musk",
-          "birthDate": "1971-06-28",
-          "deathDate": null,
-          "nationality": "American",
-          "biography": "Elon Musk is a business magnate, industrial designer, and engineer. He is the founder, CEO, CTO, and chief designer of SpaceX; early investor, CEO, and product architect of Tesla, Inc.; founder of The Boring Company; co-founder of Neuralink; and co-founder and initial co-chairman of OpenAI.",
-          "imageUrl": "src/assets/characters/musk.jpg"
-        }
-      ]
-      
+  "characters": [
+    {
+      "id": 1,
+      "name": "Leonardo da Vinci",
+      "birthDate": "1452-04-15",
+      "deathDate": "1519-05-02",
+      "nationality": "Italian",
+      "biography": "Leonardo da Vinci was a polymath of the Italian Renaissance whose areas of interest included invention, painting, sculpting, architecture, science, music, mathematics, engineering, literature, anatomy, geology, astronomy, botany, paleontology, and cartography. He is widely considered one of the most diversely talented individuals ever to have lived.",
+      "imageUrl": "src/assets/characters/leonardo.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Albert Einstein",
+      "birthDate": "1879-03-14",
+      "deathDate": "1955-04-18",
+      "nationality": "German",
+      "biography": "Albert Einstein was a theoretical physicist who developed the theory of relativity, one of the two pillars of modern physics. His work is also known for its influence on the philosophy of science.",
+      "imageUrl": "src/assets/characters/einstein.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Isaac Newton",
+      "birthDate": "1643-01-04",
+      "deathDate": "1727-03-31",
+      "nationality": "English",
+      "biography": "Isaac Newton was an English mathematician, physicist, astronomer, theologian, and author who is widely recognized as one of the most influential scientists of all time and a key figure in the scientific revolution.",
+      "imageUrl": "src/assets/characters/newton.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Marie Curie",
+      "birthDate": "1867-11-07",
+      "deathDate": "1934-07-04",
+      "nationality": "Polish",
+      "biography": "Marie Curie was a physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize, and the only person to win Nobel Prizes in two different scientific fields.",
+      "imageUrl": "src/assets/characters/curie.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Mahatma Gandhi",
+      "birthDate": "1869-10-02",
+      "deathDate": "1948-01-30",
+      "nationality": "Indian",
+      "biography": "Mahatma Gandhi was an Indian lawyer, anti-colonial nationalist, and political ethicist who employed nonviolent resistance to lead the successful campaign for India's independence from British rule.",
+      "imageUrl": "src/assets/characters/gandhi.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Martin Luther King Jr.",
+      "birthDate": "1929-01-15",
+      "deathDate": "1968-04-04",
+      "nationality": "American",
+      "biography": "Martin Luther King Jr. was an American Baptist minister and activist who became the most visible spokesperson and leader in the civil rights movement from 1955 until his assassination in 1968.",
+      "imageUrl": "src/assets/characters/mlk.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Nelson Mandela",
+      "birthDate": "1918-07-18",
+      "deathDate": "2013-12-05",
+      "nationality": "South African",
+      "biography": "Nelson Mandela was a South African anti-apartheid revolutionary, political leader, and philanthropist who served as President of South Africa from 1994 to 1999. He was the country's first black head of state and the first elected in a fully representative democratic election.",
+      "imageUrl": "src/assets/characters/mandela.jpg"
+    },
+    {
+      "id": 8,
+      "name": "William Shakespeare",
+      "birthDate": "1564-04-26",
+      "deathDate": "1616-04-23",
+      "nationality": "English",
+      "biography": "William Shakespeare was an English playwright, poet, and actor, widely regarded as the greatest writer in the English language and the world's greatest dramatist.",
+      "imageUrl": "src/assets/characters/shakespeare.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Abraham Lincoln",
+      "birthDate": "1809-02-12",
+      "deathDate": "1865-04-15",
+      "nationality": "American",
+      "biography": "Abraham Lincoln was an American lawyer and politician who served as the 16th president of the United States from 1861 until his assassination in 1865. Lincoln led the nation through the American Civil War and preserved the Union.",
+      "imageUrl": "src/assets/characters/lincoln.webp"
+    },
+    {
+      "id": 10,
+      "name": "George Washington",
+      "birthDate": "1732-02-22",
+      "deathDate": "1799-12-14",
+      "nationality": "American",
+      "biography": "George Washington was an American political leader, military general, statesman, and Founding Father who served as the first president of the United States from 1789 to 1797.",
+      "imageUrl": "src/assets/characters/washington.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Napoleon Bonaparte",
+      "birthDate": "1769-08-15",
+      "deathDate": "1821-05-05",
+      "nationality": "French",
+      "biography": "Napoleon Bonaparte was a French military and political leader who rose to prominence during the French Revolution and led several successful campaigns during the Revolutionary Wars.",
+      "imageUrl": "src/assets/characters/napoleon.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Galileo Galilei",
+      "birthDate": "1564-02-15",
+      "deathDate": "1642-01-08",
+      "nationality": "Italian",
+      "biography": "Galileo Galilei was an Italian astronomer, physicist and engineer, sometimes described as a polymath. Galileo has been called the 'father' of observational astronomy, modern physics, the scientific method, and modern science.",
+      "imageUrl": "src/assets/characters/galileo.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Christopher Columbus",
+      "birthDate": "1451-10-31",
+      "deathDate": "1506-05-20",
+      "nationality": "Italian",
+      "biography": "Christopher Columbus was an Italian explorer and navigator who completed four voyages across the Atlantic Ocean, opening the way for the widespread European exploration and colonization of the Americas.",
+      "imageUrl": "src/assets/characters/columbus.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Thomas Edison",
+      "birthDate": "1847-02-11",
+      "deathDate": "1931-10-18",
+      "nationality": "American",
+      "biography": "Thomas Edison was an American inventor and businessman who has been described as America's greatest inventor. He developed many devices in fields such as electric power generation, mass communication, sound recording, and motion pictures.",
+      "imageUrl": "src/assets/characters/edison.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Nikola Tesla",
+      "birthDate": "1856-07-10",
+      "deathDate": "1943-01-07",
+      "nationality": "Serbian-American",
+      "biography": "Nikola Tesla was a Serbian-American inventor, electrical engineer, mechanical engineer, and futurist who is best known for his contributions to the design of the modern alternating current (AC) electricity supply system.",
+      "imageUrl": "src/assets/characters/tesla.jpeg"
+    },
+    {
+      "id": 16,
+      "name": "Pablo Picasso",
+      "birthDate": "1881-10-25",
+      "deathDate": "1973-04-08",
+      "nationality": "Spanish",
+      "biography": "Pablo Picasso was a Spanish painter, sculptor, printmaker, ceramicist, and theatre designer who spent most of his adult life in France. He is regarded as one of the most influential artists of the 20th century.",
+      "imageUrl": "src/assets/characters/picasso.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Sigmund Freud",
+      "birthDate": "1856-05-06",
+      "deathDate": "1939-09-23",
+      "nationality": "Austrian",
+      "biography": "Sigmund Freud was an Austrian neurologist and the founder of psychoanalysis, a clinical method for treating psychopathology through dialogue between a patient and a psychoanalyst.",
+      "imageUrl": "src/assets/characters/freud.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Ludwig van Beethoven",
+      "birthDate": "1770-12-17",
+      "deathDate": "1827-03-26",
+      "nationality": "German",
+      "biography": "Ludwig van Beethoven was a German composer and pianist. Beethoven remains one of the most admired composers in the history of Western music; his works rank amongst the most performed of the classical music repertoire.",
+      "imageUrl": "src/assets/characters/beethoven.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Charles Darwin",
+      "birthDate": "1809-02-12",
+      "deathDate": "1882-04-19",
+      "nationality": "British",
+      "biography": "Charles Darwin was an English naturalist, geologist and biologist, best known for his contributions to the science of evolution. His proposition that all species of life have descended from common ancestors is now widely accepted and considered a foundational concept in science.",
+      "imageUrl": "src/assets/characters/darwin.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Malala Yousafzai",
+      "birthDate": "1997-07-12",
+      "deathDate": null,
+      "nationality": "Pakistani",
+      "biography": "Malala Yousafzai, also known mononymously as Malala, is a Pakistani activist for female education and the youngest Nobel Prize laureate. She is known for her advocacy of education for women and children in her native Swat Valley in Khyber Pakhtunkhwa, northwest Pakistan, where the local Taliban had at times banned girls from attending school.",
+      "imageUrl": "src/assets/characters/malala.jpg"
+    },
+    {
+      "id": 21,
+      "name": "Vincent van Gogh",
+      "birthDate": "1853-03-30",
+      "deathDate": "1890-07-29",
+      "nationality": "Dutch",
+      "biography": "Vincent van Gogh was a Dutch post-impressionist painter who is among the most famous and influential figures in the history of Western art. In just over a decade, he created about 2,100 artworks, including about 860 oil paintings, most of them in the last two years of his life.",
+      "imageUrl": "src/assets/characters/vangogh.jpg"
+    },
+    {
+      "id": 22,
+      "name": "Anne Frank",
+      "birthDate": "1929-06-12",
+      "deathDate": "1945-02-00",
+      "nationality": "German-Dutch",
+      "biography": "Anne Frank was a German-Dutch diarist of Jewish heritage. One of the most discussed Jewish victims of the Holocaust, she gained fame posthumously with the publication of 'The Diary of a Young Girl', in which she documents her life in hiding from 1942 to 1944, during the German occupation of the Netherlands in World War II.",
+      "imageUrl": "src/assets/characters/annefrank.jpg"
+    },
+    {
+      "id": 23,
+      "name": "Frida Kahlo",
+      "birthDate": "1907-07-06",
+      "deathDate": "1954-07-13",
+      "nationality": "Mexican",
+      "biography": "Frida Kahlo was a Mexican painter known for her many portraits, self-portraits, and works inspired by the nature and artifacts of Mexico. Inspired by the country's popular culture, she employed a naïve folk art style to explore questions of identity, postcolonialism, gender, class, and race in Mexican society.",
+      "imageUrl": "src/assets/characters/kahlo.jpg"
+    },
+    {
+      "id": 24,
+      "name": "Simon Bolivar",
+      "birthDate": "1783-07-24",
+      "deathDate": "1830-12-17",
+      "nationality": "Venezuelan",
+      "biography": "Simón Bolívar was a Venezuelan military and political leader who led what are currently the countries of Venezuela, Bolivia, Colombia, Ecuador, Peru, and Panama to independence from the Spanish Empire.",
+      "imageUrl": "src/assets/characters/bolivar.png"
+    },
+    {
+      "id": 25,
+      "name": "Fidel Castro",
+      "birthDate": "1926-08-13",
+      "deathDate": "2016-11-25",
+      "nationality": "Cuban",
+      "biography": "Fidel Castro was a Cuban communist revolutionary and politician who was the leader of Cuba from 1959 to 2008. He served as Prime Minister from 1959 to 1976 and President from 1976 to 2008.",
+      "imageUrl": "src/assets/characters/castro.jpg"
+    },
+    {
+      "id": 26,
+      "name": "Che Guevara",
+      "birthDate": "1928-06-14",
+      "deathDate": "1967-10-09",
+      "nationality": "Argentine",
+      "biography": "Che Guevara was an Argentine Marxist revolutionary, physician, author, guerrilla leader, diplomat, and military theorist. A major figure of the Cuban Revolution, his stylized visage has become a ubiquitous countercultural symbol of rebellion and global insignia in popular culture.",
+      "imageUrl": "src/assets/characters/che.jpg"
+    },
+    {
+      "id": 27,
+      "name": "Mother Teresa",
+      "birthDate": "1910-08-26",
+      "deathDate": "1997-09-05",
+      "nationality": "Albanian-Indian",
+      "biography": "Mother Teresa, known in the Roman Catholic Church as Saint Teresa of Calcutta, was an Albanian-Indian Roman Catholic nun and missionary. She was born in Skopje (now the capital of North Macedonia), then part of the Kosovo Vilayet of the Ottoman Empire.",
+      "imageUrl": "src/assets/characters/teresa.jpg"
+    },
+    {
+      "id": 28,
+      "name": "John F. Kennedy",
+      "birthDate": "1917-05-29",
+      "deathDate": "1963-11-22",
+      "nationality": "American",
+      "biography": "John F. Kennedy, often referred to by his initials JFK, was an American politician who served as the 35th president of the United States from January 1961 until his assassination in November 1963.",
+      "imageUrl": "src/assets/characters/jfk.webp"
+    },
+    {
+      "id": 29,
+      "name": "Steve Jobs",
+      "birthDate": "1955-02-24",
+      "deathDate": "2011-10-05",
+      "nationality": "American",
+      "biography": "Steve Jobs was an American business magnate, industrial designer, investor, and media proprietor. He was the chairman, chief executive officer (CEO), and co-founder of Apple Inc.; the chairman and majority shareholder of Pixar; a member of The Walt Disney Company's board of directors following its acquisition of Pixar; and the founder, chairman, and CEO of NeXT.",
+      "imageUrl": "src/assets/characters/jobs.jpg"
+    },
+    {
+      "id": 30,
+      "name": "Elon Musk",
+      "birthDate": "1971-06-28",
+      "deathDate": null,
+      "nationality": "American",
+      "biography": "Elon Musk is a business magnate, industrial designer, and engineer. He is the founder, CEO, CTO, and chief designer of SpaceX; early investor, CEO, and product architect of Tesla, Inc.; founder of The Boring Company; co-founder of Neuralink; and co-founder and initial co-chairman of OpenAI.",
+      "imageUrl": "src/assets/characters/musk.jpg"
+    },
+    {
+      "name": "Marvin Figueroa",
+      "nationality": "Salvadoreno",
+      "biography": "Un desarrollador frontend especializado en React.",
+      "birthDate": "2024-07-03T06:00:00.000Z",
+      "occupation": "Programador",
+      "imageUrl": "http://www.google.com",
+      "id": 31
+    },
+    {
+      "name": "Juan Perez",
+      "nationality": "Guatemalteco",
+      "biography": "Una buena persona conocida mundialmente",
+      "birthDate": "2024-07-01T06:00:00.000Z",
+      "deathDate": "2024-07-03T06:00:00.000Z",
+      "occupation": "Jornalero",
+      "imageUrl": "http://www.google.com",
+      "id": 32
+    },
+    {
+      "name": "Jose Rodriguez",
+      "nationality": "Guatemalteco",
+      "biography": "nbajbdhsbdjbsadjasd",
+      "birthDate": "2024-07-03T06:00:00.000Z",
+      "occupation": "Abogado",
+      "imageUrl": "http://www.google.com",
+      "id": 33
+    }
+  ]
 }
