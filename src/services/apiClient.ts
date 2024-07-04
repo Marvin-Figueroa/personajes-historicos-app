@@ -26,6 +26,12 @@ class APIClient<T> {
   create = (entity: T) => {
     return axiosInstance.post<T>(this.endpoint, entity).then((res) => res.data);
   };
+
+  delete = (id: number) => {
+    return axiosInstance
+      .delete<void>(this.endpoint + "/" + id)
+      .then((res) => res.data);
+  };
 }
 
 export default APIClient;
