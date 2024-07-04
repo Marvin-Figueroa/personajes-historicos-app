@@ -2,11 +2,15 @@ import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { getTruncatedText } from "../utils/utilities";
 import { Character } from "../hooks/useCharacters";
+import fallbackImg from "../assets/placeholder.jpg";
+import { useState } from "react";
 
 interface Props {
   character: Character;
 }
 const CharacterCard = ({ character }: Props) => {
+  const [imgSrc, setImgSrc] = useState(character.imageUrl);
+
   return (
     <Card
       style={{
@@ -39,8 +43,9 @@ const CharacterCard = ({ character }: Props) => {
             objectFit: "cover",
             objectPosition: "top",
           }}
-          src={character.imageUrl}
+          src={imgSrc}
           alt={character.name}
+          onError={() => setImgSrc(fallbackImg)}
         />
       }
     >
