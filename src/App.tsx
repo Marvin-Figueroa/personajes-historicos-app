@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import CharactersPage from "./pages/CharactersPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import NewCharacterPage from "./pages/NewCharacterPage";
 
 function App() {
   return (
@@ -19,11 +20,7 @@ function App() {
           path="/new-character"
           element={
             <Layout>
-              <div className="flex align-items-center justify-content-center flex-grow-1">
-                <p className="text-2xl text-purple-500">
-                  Page not ready yet 😢
-                </p>
-              </div>
+              <NewCharacterPage />
             </Layout>
           }
         />
