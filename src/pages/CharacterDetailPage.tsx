@@ -3,10 +3,12 @@ import { useParams } from "react-router-dom";
 import useCharacter from "../hooks/useCharacter";
 import fallbackImage from "../assets/placeholder.jpg";
 import CharacterDetailSkeleton from "../components/CharacterDetailSkeleton";
+import { useState } from "react";
 
 const CharacterDetailPage = () => {
   const { id } = useParams();
   const { data: character, isLoading } = useCharacter(id!);
+  const [imgSrc, setImgSrc] = useState(character?.imageUrl);
 
   if (isLoading) return <CharacterDetailSkeleton />;
 
@@ -34,8 +36,9 @@ const CharacterDetailPage = () => {
         height="400px"
         width="300px"
         className="flex justify-content-center flex-order-0 md:flex-order-1"
-        src={character?.imageUrl || fallbackImage}
+        src={imgSrc}
         alt={character?.name}
+        onError={() => setImgSrc(fallbackImage)}
       />
     </div>
   );
