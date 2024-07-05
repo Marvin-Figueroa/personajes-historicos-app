@@ -14,7 +14,7 @@ const useDeleteCharacter = (
   const queryClient = useQueryClient();
 
   return useMutation<void, Error, number, DeleteCharacterContext>({
-    mutationFn: characterService.delete, // error here
+    mutationFn: characterService.delete,
     onMutate: async (characterId) => {
       // Cancelar cualquier actualización en curso para evitar conflictos
       await queryClient.cancelQueries({ queryKey: CACHE_KEY_CHARACTERS });
@@ -36,10 +36,12 @@ const useDeleteCharacter = (
       onDeleteSuccess();
     },
     onError: (_error, _characterId, context) => {
+      if (!context) return;
+
       // Revertir la actualización optimista usando el snapshot anterior
       queryClient.setQueryData<Character[]>(
         CACHE_KEY_CHARACTERS,
-        context?.previousCharacters
+        context.previousCharacters
       );
       onDeleteFailure();
     },

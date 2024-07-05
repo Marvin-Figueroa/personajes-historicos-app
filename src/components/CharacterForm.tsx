@@ -36,11 +36,13 @@ const CharacterForm = () => {
     resolver: zodResolver(characterSchema),
   });
 
-  const { setIsFormDirty } = useCharactersAppStore();
+  const setIsCharacterFormDirty = useCharactersAppStore(
+    (s) => s.setIsCharacterFormDirty
+  );
 
   // Actualizar el estado del store cuando isDirty cambia
   useEffect(() => {
-    setIsFormDirty(isDirty);
+    setIsCharacterFormDirty(isDirty);
   }, [isDirty]);
 
   const addCharacter = useAddCharacter(
@@ -52,7 +54,7 @@ const CharacterForm = () => {
       });
 
       reset();
-      setIsFormDirty(false);
+      setIsCharacterFormDirty(false);
     },
     () => {
       toast.current?.show({
@@ -194,7 +196,13 @@ const CharacterForm = () => {
           </div>
         </div>
         <div className="card flex justify-content-center">
-          <Button type="submit" label="Submit" className="mt-4 w-3" />
+          <Button
+            disabled={addCharacter.isPending}
+            icon={addCharacter.isPending ? "pi pi-spin pi-spinner" : ""}
+            type="submit"
+            label={addCharacter.isPending ? "Submitting..." : "Submit"}
+            className="mt-4 w-3"
+          />
         </div>
       </form>
     </>

@@ -9,7 +9,9 @@ import useCharactersAppStore from "../state/store";
 const NavBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { isFormDirty } = useCharactersAppStore();
+  const isCharacterFormDirty = useCharactersAppStore(
+    (s) => s.isCharacterFormDirty
+  );
 
   const confirmNavigation = () => {
     confirmDialog({
@@ -25,7 +27,7 @@ const NavBar = () => {
   const endContent = (
     <Button
       onClick={() =>
-        location.pathname === "/new-character" && isFormDirty
+        location.pathname === "/new-character" && isCharacterFormDirty
           ? confirmNavigation()
           : navigate(
               location.pathname === "/new-character" ? "/" : "/new-character"

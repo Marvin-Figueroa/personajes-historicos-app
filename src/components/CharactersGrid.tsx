@@ -5,7 +5,7 @@ import useDeleteCharacter from "../hooks/useDeleteCharacter";
 import { Toast } from "primereact/toast";
 import { useRef } from "react";
 import { Character } from "../services/characterService";
-import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
+import { confirmDialog } from "primereact/confirmdialog";
 
 interface Props {
   characters: Character[];
@@ -55,6 +55,7 @@ const CharactersGrid = ({ characters, loading }: Props) => {
           confirmDeletion(id);
         }}
         character={character}
+        key={character.id}
       />
     </div>
   );
@@ -81,7 +82,6 @@ const CharactersGrid = ({ characters, loading }: Props) => {
         />
       ) : (
         <DataView
-          children={<ConfirmDialog />} // avoid double rendering of the confirmation dialog
           value={characters}
           itemTemplate={characterTemplate}
           layout="grid"
