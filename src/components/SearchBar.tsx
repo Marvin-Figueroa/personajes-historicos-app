@@ -25,9 +25,8 @@ const SearchBar = ({ placeholder, disabled, className }: Props) => {
     >
       <IconField
         disabled={disabled}
-        className="flex-grow"
+        className="w-20rem md:w-30rem"
         iconPosition="left"
-        style={{ width: "400px", maxWidth: "600px" }}
       >
         <InputIcon className="pi pi-search" />
         <InputText

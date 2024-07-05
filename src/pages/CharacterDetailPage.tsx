@@ -14,10 +14,14 @@ const CharacterDetailPage = () => {
   if (isLoading || !character) return <CharacterDetailSkeleton />;
 
   return (
-    <div className="px-4 flex flex-column md:flex-row md:justify-content-between w-full gap-5">
-      <div className=" flex flex-column justify-content-between flex-order-1 md:flex-order-0">
-        <h1 className="text-4xl m-0 text-accent">{character?.name}</h1>
-        <h2 className="text-2xl m-0">{character?.nationality}</h2>
+    <div className="py-6 md:py-0 px-4 flex flex-column align-items-center md:flex-row md:justify-content-between w-full gap-5">
+      <div className=" flex flex-column gap-4 justify-content-between flex-order-1 md:flex-order-0">
+        <h1 className="text-4xl text-center md:text-left m-0 text-accent">
+          {character?.name}
+        </h1>
+        <h2 className="text-2xl text-center md:text-left m-0">
+          {character?.nationality}
+        </h2>
         <p className="m-0">
           <strong className="text-accent">Biography: &nbsp;</strong>{" "}
           {character?.biography}
@@ -51,9 +55,9 @@ const CharacterDetailPage = () => {
         </p>
       </div>
       <img
-        className="flex justify-content-center flex-order-0 md:flex-order-1"
+        className="h-30rem md:h-20rem flex justify-content-center flex-order-0 md:flex-order-1"
         style={{
-          height: "400px",
+          height: "300px",
           width: "300px",
           objectFit: "cover",
           objectPosition: "top",

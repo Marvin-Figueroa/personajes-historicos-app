@@ -42,8 +42,8 @@ const CharacterCard = ({ character, onDelete }: Props) => {
       }
       header={
         <img
+          className="sm:min-h-full md:h-16rem"
           style={{
-            maxHeight: "250px",
             objectFit: "cover",
             objectPosition: "top",
           }}

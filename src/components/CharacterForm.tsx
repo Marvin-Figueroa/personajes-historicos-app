@@ -201,7 +201,7 @@ const CharacterForm = () => {
             icon={addCharacter.isPending ? "pi pi-spin pi-spinner" : ""}
             type="submit"
             label={addCharacter.isPending ? "Submitting..." : "Submit"}
-            className="mt-4 w-3"
+            className="mt-4 sm:w-full md:w-15rem"
           />
         </div>
       </form>
