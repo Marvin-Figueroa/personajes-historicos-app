@@ -4,12 +4,14 @@ import { getTruncatedText } from "../utils/utilities";
 import fallbackImg from "../assets/placeholder.jpg";
 import { useState } from "react";
 import { Character } from "../services/characterService";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   character: Character;
   onDelete: (id: number) => void;
 }
 const CharacterCard = ({ character, onDelete }: Props) => {
+  const navigate = useNavigate();
   const [imgSrc, setImgSrc] = useState(character.imageUrl);
 
   return (
@@ -28,6 +30,7 @@ const CharacterCard = ({ character, onDelete }: Props) => {
             label="Details"
             severity="success"
             aria-label="Details"
+            onClick={() => navigate(`/characters/${character.id}`)}
           />
           <Button
             icon="pi pi-trash"

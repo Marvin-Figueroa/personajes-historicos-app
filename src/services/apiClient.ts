@@ -27,6 +27,13 @@ class APIClient<T> {
     }));
   };
 
+  getById = async (id: number | string) => {
+    await this.delay(1000);
+    return axiosInstance
+      .get<T>(this.endpoint + "/" + id)
+      .then((res) => res.data);
+  };
+
   create = async (entity: T) => {
     await this.delay(1000);
     return axiosInstance.post<T>(this.endpoint, entity).then((res) => res.data);
