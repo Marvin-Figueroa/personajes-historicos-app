@@ -1,7 +1,7 @@
 import { Card } from "primereact/card";
 import { Button } from "primereact/button";
 import { getTruncatedText } from "../utils/utilities";
-import fallbackImg from "../assets/placeholder.jpg";
+import fallbackImg from "/placeholder.jpg";
 import { useState } from "react";
 import { Character } from "../services/characterService";
 import { useNavigate } from "react-router-dom";
