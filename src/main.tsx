@@ -9,8 +9,9 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
 
-import App from "./App.tsx";
 import "./index.css";
+import { RouterProvider } from "react-router-dom";
+import router from "./routes/routes.tsx";
 
 const queryClient = new QueryClient();
 
@@ -18,7 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <PrimeReactProvider>
       <QueryClientProvider client={queryClient}>
-        <App />
+        <RouterProvider router={router} />
         <ReactQueryDevtools />
       </QueryClientProvider>
     </PrimeReactProvider>

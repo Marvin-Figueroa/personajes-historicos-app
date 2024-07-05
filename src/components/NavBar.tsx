@@ -29,18 +29,12 @@ const NavBar = () => {
       onClick={() =>
         location.pathname === "/new-character" && isCharacterFormDirty
           ? confirmNavigation()
-          : navigate(
-              location.pathname === "/new-character" ? "/" : "/new-character"
-            )
+          : navigate(location.pathname !== "/" ? "/" : "/new-character")
       }
-      icon={
-        location.pathname === "/new-character"
-          ? "pi pi-arrow-left"
-          : "pi pi-plus"
-      }
-      label={location.pathname === "/new-character" ? "Go Back" : "Add New"}
-      severity={location.pathname === "/new-character" ? "danger" : "success"}
-      aria-label={location.pathname === "/new-character" ? "Back" : "Add"}
+      icon={location.pathname !== "/" ? "pi pi-arrow-left" : "pi pi-plus"}
+      label={location.pathname !== "/" ? "Go Back" : "Add New"}
+      severity={location.pathname !== "/" ? "danger" : "success"}
+      aria-label={location.pathname !== "/" ? "Back" : "Add"}
     />
   );
 
