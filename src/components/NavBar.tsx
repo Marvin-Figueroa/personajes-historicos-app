@@ -38,19 +38,7 @@ const NavBar = () => {
     />
   );
 
-  return (
-    <Toolbar
-      style={{
-        alignItems: "center",
-        borderBottom: "1px solid #333",
-        padding: "10px",
-      }}
-      start={Logo}
-      center={<ConfirmDialog />}
-      end={endContent}
-      className="bg-gray-900 shadow-2"
-    />
-  );
+  return <Toolbar start={Logo} center={<ConfirmDialog />} end={endContent} />;
 };
 
 export default NavBar;

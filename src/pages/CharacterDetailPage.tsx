@@ -13,10 +13,8 @@ const CharacterDetailPage = () => {
   return (
     <div className="px-4 flex flex-column md:flex-row md:justify-content-between w-full gap-5">
       <div className=" flex flex-column justify-content-between flex-order-1 md:flex-order-0">
-        <h1 className="text-4xl m-0 text-green-600">{character?.name}</h1>
-        <h2 className="text-2xl m-0 text-green-300">
-          {character?.nationality}
-        </h2>
+        <h1 className="text-4xl m-0 text-accent">{character?.name}</h1>
+        <h2 className="text-2xl m-0">{character?.nationality}</h2>
         <p className="m-0">
           <strong>Biography: </strong> {character?.biography}
         </p>

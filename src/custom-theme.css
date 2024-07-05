@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("/fonts/Rubik-Semibold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Electromagnetic-Lungs";
+  src: url("/fonts/Electromagnetic-Lungs.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #0ae69c;
+  --secondary-color: #42297a;
+  --text-color: #ffffff;
+  --gray: #2f2f2f;
+  --error-color: #c82333;
+  --font-family: "Rubik", sans-serif;
+  --box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+}
+
+body {
+  background-color: var(--gray);
+  color: var(--text-color);
+}
+
+.p-button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: var(--font-family);
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  font-size: small;
+  padding: 13px 15px;
+  outline: none;
+}
+
+.p-button:hover {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
+
+.p-toolbar {
+  background-color: var(--gray);
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+}
+
+.footer {
+  background-color: var(--secondary-color);
+}
+
+.text-accent {
+  color: var(--primary-color);
+}
+
+.p-dataview .p-dataview-content {
+  background: var(--gray);
+  color: var(--text-color);
+  border: 0 none;
+  padding: 0;
+}
+
+.p-paginator {
+  background-color: var(--gray);
+  color: var(--secondary-color);
+}
+
+.p-card {
+  border-radius: "12px";
+  overflow: "hidden";
+  background-color: var(--gray);
+  color: var(--text-color);
+  box-shadow: var(--box-shadow);
+}
+
+.p-card .p-card-content {
+  font-weight: 300;
+  font-family: "Electromagnetic-Lungs", sans-serif;
+}
+
+.text-purple {
+  color: var(--secondary-color);
+}
+
+p {
+  font-family: "Electromagnetic-Lungs", sans-serif;
+}

@@ -13,7 +13,7 @@ const NotFoundPage = () => {
       <NavBar />
       <main className="flex flex-grow-1 flex-column">
         <div className="flex flex-column align-items-center justify-content-evenly flex-grow-1">
-          <h1 className="text-center m-0 text-3xl text-red-500">Oops!</h1>
+          <h1 className="text-center m-0 text-5xl text-red-500">Oops!</h1>
           <div className="card flex justify-content-center">
             <Image
               src={

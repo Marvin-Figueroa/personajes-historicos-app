@@ -9,7 +9,7 @@ const CharactersPage = () => {
   return (
     <>
       <div className="flex flex-grow-1 flex-column">
-        <h1 className="text-center text-green-500 text-3xl">
+        <h1 className="text-accent text-center text-3xl">
           Historical Characters
         </h1>
         <SearchBar
@@ -19,9 +19,7 @@ const CharactersPage = () => {
         />
         {data?.results && data.results.length === 0 ? (
           <div className="flex align-items-center justify-content-center flex-grow-1">
-            <p className="text-2xl text-purple-500">
-              No characters were found 😢
-            </p>
+            <p className="text-2xl text-red-500">No characters were found 😢</p>
           </div>
         ) : (
           <CharactersGrid
@@ -30,11 +28,10 @@ const CharactersPage = () => {
           />
         )}
       </div>
-      {data?.results && data.results.length > 0 && (
-        <div className="flex justify-content-center my-4">
-          <Pagination itemsCount={data.count} />
-        </div>
-      )}
+
+      <div className="flex justify-content-center my-4">
+        <Pagination itemsCount={data?.count || 0} />
+      </div>
     </>
   );
 };

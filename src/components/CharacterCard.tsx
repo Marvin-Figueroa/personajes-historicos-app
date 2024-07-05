@@ -19,12 +19,11 @@ const CharacterCard = ({ character, onDelete }: Props) => {
       style={{
         borderRadius: "8px",
         overflow: "hidden",
-        backgroundColor: "#2F2F2F",
       }}
       title={character.name}
       subTitle={character.nationality}
       footer={
-        <div className="card flex flex-wrap justify-content-center align-items-center gap-3">
+        <div className="card flex justify-content-between align-items-center">
           <Button
             icon="pi pi-search-plus"
             label="Details"
