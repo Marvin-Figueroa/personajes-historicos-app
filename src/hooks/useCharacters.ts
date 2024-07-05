@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
-import { CharacterQuery } from "../pages/CharactersPage";
 import { FetchResponse } from "../services/apiClient";
 import { CACHE_KEY_CHARACTERS } from "../utils/constants";
 import characterService, { Character } from "../services/characterService";
+import useCharactersAppStore from "../state/store";
 
-const useCharacters = (characterQuery: CharacterQuery) =>
-  useQuery<FetchResponse<Character>, Error>({
+const useCharacters = () => {
+  const characterQuery = useCharactersAppStore((s) => s.characterQuery);
+
+  return useQuery<FetchResponse<Character>, Error>({
     queryKey: [...CACHE_KEY_CHARACTERS, characterQuery],
     queryFn: () =>
       characterService.getAll({
@@ -15,7 +17,7 @@ const useCharacters = (characterQuery: CharacterQuery) =>
           _limit: characterQuery.pageSize,
         },
       }),
-    staleTime: 30 * 1000, // 30secs
   });
+};
 
 export default useCharacters;

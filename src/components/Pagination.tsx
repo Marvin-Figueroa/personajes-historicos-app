@@ -1,13 +1,15 @@
-import { Paginator, PaginatorPageChangeEvent } from "primereact/paginator";
-import { CharacterQuery } from "../pages/CharactersPage";
+import { Paginator } from "primereact/paginator";
+import useCharactersAppStore from "../state/store";
 
 interface Props {
-  onPageChange: (event: PaginatorPageChangeEvent) => void;
-  characterQuery: CharacterQuery;
   itemsCount: number;
 }
 
-const Pagination = ({ onPageChange, characterQuery, itemsCount }: Props) => {
+const Pagination = ({ itemsCount }: Props) => {
+  const characterQuery = useCharactersAppStore((s) => s.characterQuery);
+  const setPageNumber = useCharactersAppStore((s) => s.setPageNumber);
+  const setPageSize = useCharactersAppStore((s) => s.setPageSize);
+
   return (
     <div className="card">
       <Paginator
@@ -15,7 +17,9 @@ const Pagination = ({ onPageChange, characterQuery, itemsCount }: Props) => {
         rows={characterQuery.pageSize}
         totalRecords={itemsCount}
         rowsPerPageOptions={[8, 12, 16, 20, 50]}
-        onPageChange={onPageChange}
+        onPageChange={(event) => {
+          setPageNumber(event.page + 1), setPageSize(event.rows);
+        }}
       />
     </div>
   );

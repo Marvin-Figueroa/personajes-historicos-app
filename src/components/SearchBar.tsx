@@ -2,15 +2,16 @@ import { InputText } from "primereact/inputtext";
 import { IconField } from "primereact/iconfield";
 import { InputIcon } from "primereact/inputicon";
 import { useRef } from "react";
+import useCharactersAppStore from "../state/store";
 
 interface Props {
   placeholder?: string;
-  onSearch: (value: string) => void;
   disabled: boolean;
   className: string;
 }
 
-const SearchBar = ({ placeholder, onSearch, disabled, className }: Props) => {
+const SearchBar = ({ placeholder, disabled, className }: Props) => {
+  const setCharacterName = useCharactersAppStore((s) => s.setCharacterName);
   const ref = useRef<HTMLInputElement>(null);
 
   return (
@@ -18,7 +19,8 @@ const SearchBar = ({ placeholder, onSearch, disabled, className }: Props) => {
       className={className}
       onSubmit={(event) => {
         event.preventDefault();
-        if (ref.current?.value.trim()) onSearch(ref.current.value.trim());
+        if (ref.current?.value.trim())
+          setCharacterName(ref.current.value.trim());
       }}
     >
       <IconField
@@ -33,7 +35,7 @@ const SearchBar = ({ placeholder, onSearch, disabled, className }: Props) => {
           placeholder={placeholder ? placeholder : "Search..."}
           ref={ref}
           onChange={(event) => {
-            if (event.target.value === "") onSearch("");
+            if (event.target.value === "") setCharacterName("");
           }}
         />
       </IconField>
