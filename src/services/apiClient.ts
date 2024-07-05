@@ -16,18 +16,24 @@ class APIClient<T> {
     this.endpoint = endpoint;
   }
 
-  getAll = (requestConfig?: AxiosRequestConfig) => {
+  private delay = (ms: number) =>
+    new Promise((resolve) => setTimeout(resolve, ms));
+
+  getAll = async (requestConfig?: AxiosRequestConfig) => {
+    await this.delay(1000);
     return axiosInstance.get<T[]>(this.endpoint, requestConfig).then((res) => ({
       count: parseInt(res.headers["x-total-count"]),
       results: res.data,
     }));
   };
 
-  create = (entity: T) => {
+  create = async (entity: T) => {
+    await this.delay(1000);
     return axiosInstance.post<T>(this.endpoint, entity).then((res) => res.data);
   };
 
-  delete = (id: number) => {
+  delete = async (id: number) => {
+    await this.delay(1000);
     return axiosInstance
       .delete<void>(this.endpoint + "/" + id)
       .then((res) => res.data);
