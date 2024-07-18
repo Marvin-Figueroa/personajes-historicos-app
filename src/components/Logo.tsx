@@ -1,5 +1,5 @@
 import { Image } from "primereact/image";
-import logo from "../assets/logo-dark-bg.png";
+import logo from "../assets/react.svg";
 import { Link } from "react-router-dom";
 
 const Logo = () => {
@@ -8,8 +8,8 @@ const Logo = () => {
       <Image
         className="flex-shrink-0"
         src={logo}
-        alt="myneflow logo"
-        width="100"
+        alt="react logo"
+        width="40px"
       />
     </Link>
   );
