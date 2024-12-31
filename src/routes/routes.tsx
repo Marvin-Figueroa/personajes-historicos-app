@@ -1,11 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
-import CharactersPage from "../pages/CharactersPage";
-import NewCharacterPage from "../pages/NewCharacterPage";
-import CharacterDetailPage from "../pages/CharacterDetailPage";
-import NotFoundPage from "../pages/NotFoundPage";
-import Layout from "../components/Layout";
+import { Layout } from '../components/Layout';
+import  CharactersPage  from '../pages/CharactersPage';
+import CharacterDetailPage from '../pages/CharacterDetailPage';
+import NewCharacterPage from '../pages/NewCharacterPage';
+import { LoginPage } from '../pages/LoginPage';
+import { UnauthorizedPage } from '../pages/UnauthorizedPage';
+import NotFoundPage from '../pages/NotFoundPage';
+import { ProtectedRoute } from '../components/ProtectedRoute';
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
@@ -17,14 +20,24 @@ const router = createBrowserRouter([
       },
       {
         path: "new-character",
-        element: <NewCharacterPage />,
+        element: (
+          <ProtectedRoute requireUser>
+            <NewCharacterPage />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "characters/:id",
         element: <CharacterDetailPage />,
       },
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "unauthorized",
+        element: <UnauthorizedPage />,
+      },
     ],
   },
 ]);
-
-export default router;

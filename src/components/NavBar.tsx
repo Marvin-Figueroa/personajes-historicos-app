@@ -1,44 +1,43 @@
-import { Toolbar } from "primereact/toolbar";
-import Logo from "./Logo";
-import { Button } from "primereact/button";
-import { useLocation, useNavigate } from "react-router-dom";
-import { ConfirmDialog } from "primereact/confirmdialog";
-import { confirmDialog } from "primereact/confirmdialog";
-import useCharactersAppStore from "../state/store";
+import { Link } from 'react-router-dom';
+import { Button } from 'primereact/button';
 
-const NavBar = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const isCharacterFormDirty = useCharactersAppStore(
-    (s) => s.isCharacterFormDirty
+interface NavBarProps {
+  isAuthenticated: boolean;
+  isAdmin: boolean;
+  isUser: boolean;
+  userName?: string;
+  onSignOut: () => void;
+}
+
+export const NavBar = ({ 
+  isAuthenticated, 
+  isAdmin, 
+  isUser, 
+  userName, 
+  onSignOut 
+}: NavBarProps) => {
+  return (
+    <nav className="flex justify-content-between align-items-center p-3 bg-primary">
+      <div className="flex align-items-center gap-4">
+        <Link to="/" className="no-underline text-white">Home</Link>
+        {(isUser || isAdmin) && (
+          <Link to="/new-character" className="no-underline text-white">
+            Add Character
+          </Link>
+        )}
+      </div>
+      <div className="flex align-items-center gap-3">
+        {isAuthenticated ? (
+          <>
+            <span className="text-white">Welcome, {userName}</span>
+            <Button label="Sign Out" onClick={onSignOut} />
+          </>
+        ) : (
+          <Link to="/login">
+            <Button label="Sign In" />
+          </Link>
+        )}
+      </div>
+    </nav>
   );
-
-  const confirmNavigation = () => {
-    confirmDialog({
-      message:
-        "Are you sure you want to cancel and return to the home page? All changes will be lost.",
-      header: "Confirmation",
-      icon: "pi pi-exclamation-triangle",
-      defaultFocus: "reject",
-      accept: () => navigate("/"),
-    });
-  };
-
-  const endContent = (
-    <Button
-      onClick={() =>
-        location.pathname === "/new-character" && isCharacterFormDirty
-          ? confirmNavigation()
-          : navigate(location.pathname !== "/" ? "/" : "/new-character")
-      }
-      icon={location.pathname !== "/" ? "pi pi-arrow-left" : "pi pi-plus"}
-      label={location.pathname !== "/" ? "Go Back" : "Add New"}
-      severity={location.pathname !== "/" ? "danger" : "success"}
-      aria-label={location.pathname !== "/" ? "Back" : "Add"}
-    />
-  );
-
-  return <Toolbar start={Logo} center={<ConfirmDialog />} end={endContent} />;
 };
-
-export default NavBar;

@@ -1,17 +1,22 @@
-import NavBar from "./NavBar";
-import Footer from "./Footer";
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
+import { NavBar } from './NavBar';
+import { useAuth } from '../hooks/useAuth';
 
-const Layout = () => {
+export const Layout = () => {
+  const { isAuthenticated, isAdmin, isUser, user, signOut } = useAuth();
+
   return (
-    <div className="flex flex-column min-h-screen">
-      <NavBar />
-      <main className="flex flex-grow-1 flex-column justify-content-center">
+    <>
+      <NavBar 
+        isAuthenticated={isAuthenticated}
+        isAdmin={isAdmin}
+        isUser={isUser}
+        userName={user?.username}
+        onSignOut={signOut}
+      />
+      <main className="container">
         <Outlet />
       </main>
-      <Footer />
-    </div>
+    </>
   );
 };
-
-export default Layout;

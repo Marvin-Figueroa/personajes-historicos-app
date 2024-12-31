@@ -11,9 +11,12 @@
     "server": "json-server src/data/db.json --port 3001"
   },
   "dependencies": {
+    "@aws-amplify/auth": "^6.9.0",
+    "@aws-amplify/ui-react": "^6.8.0",
     "@hookform/resolvers": "^3.7.0",
     "@tanstack/react-query": "^5.49.2",
     "@tanstack/react-query-devtools": "^5.49.2",
+    "aws-amplify": "^6.11.0",
     "axios": "^1.7.2",
     "json-server": "^0.17.4",
     "primeflex": "^3.3.1",
