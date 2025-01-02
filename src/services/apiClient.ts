@@ -1,3 +1,4 @@
+import { fetchAuthSession } from 'aws-amplify/auth';
 import axios, { AxiosRequestConfig } from "axios";
 
 export interface FetchResponse<T> {
@@ -5,8 +6,23 @@ export interface FetchResponse<T> {
   results: T[];
 }
 
+
+
 const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
+});
+
+// Interceptor para añadir el token de autenticación
+axiosInstance.interceptors.request.use(async (config) => {
+  try {
+    const { accessToken } = (await fetchAuthSession()).tokens ?? {};
+    if (accessToken) {
+      config.headers.Authorization = `Bearer ${accessToken.toString()}`;
+    }
+    return config;
+  } catch (error) {
+    return config;
+  }
 });
 
 class APIClient<T> {
@@ -16,11 +32,7 @@ class APIClient<T> {
     this.endpoint = endpoint;
   }
 
-  // private delay = (ms: number) =>
-  //   new Promise((resolve) => setTimeout(resolve, ms));
-
   getAll = async (requestConfig?: AxiosRequestConfig) => {
-    // await this.delay(1000);
     return axiosInstance.get<T[]>(this.endpoint, requestConfig).then((res) => ({
       count: parseInt(res.headers["x-total-count"]),
       results: res.data,
@@ -28,19 +40,16 @@ class APIClient<T> {
   };
 
   getById = async (id: number | string) => {
-    // await this.delay(1000);
     return axiosInstance
       .get<T>(this.endpoint + "/" + id)
       .then((res) => res.data);
   };
 
   create = async (entity: T) => {
-    // await this.delay(1000);
     return axiosInstance.post<T>(this.endpoint, entity).then((res) => res.data);
   };
 
   delete = async (id: number) => {
-    // await this.delay(1000);
     return axiosInstance
       .delete<void>(this.endpoint + "/" + id)
       .then((res) => res.data);

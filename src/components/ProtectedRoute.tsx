@@ -1,5 +1,6 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
+import { ProgressSpinner } from 'primereact/progressspinner';
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
@@ -12,8 +13,16 @@ export const ProtectedRoute = ({
   requireAdmin = false,
   requireUser = false 
 }: ProtectedRouteProps) => {
-  const { isAuthenticated, isAdmin, isUser } = useAuth();
+  const { isAuthenticated, isAdmin, isUser, isLoading } = useAuth();
   const location = useLocation();
+
+  if (isLoading) {
+    return (
+      <div className="flex justify-content-center align-items-center min-h-screen">
+        <ProgressSpinner />
+      </div>
+    );
+  }
 
   if (!isAuthenticated) {
     return <Navigate to="/login" state={{ from: location }} replace />;

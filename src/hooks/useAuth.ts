@@ -1,42 +1,55 @@
-// import { useAuthenticator } from '@aws-amplify/ui-react';
-// import  Auth from '@aws-amplify/auth';  // Importación correcta en Amplify Gen 2
+import { useAuthenticator } from '@aws-amplify/ui-react';
+import { useState, useEffect } from 'react';
+import { fetchAuthSession } from '@aws-amplify/auth';
 
-// export const useAuth = () => {
-//   const { user, authStatus, signOut } = useAuthenticator((context) => [
-//     context.user,
-//     context.authStatus,
-//     context.signOut,
-//   ]);
+export const useAuth = () => {
+  const { user, authStatus, signOut } = useAuthenticator((context) => [
+    context.user,
+    context.authStatus,
+    context.signOut,
+  ]);
 
-//   const isAuthenticated = authStatus === 'authenticated';
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isUser, setIsUser] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const isAuthenticated = authStatus === 'authenticated';
 
-//   // Obtener los grupos del usuario utilizando Auth.currentAuthenticatedUser
-//   const getUserGroups = async (): Promise<string[]> => {
-//     try {
-//       const currentUser = await Auth.currentAuthenticatedUser();
-//       const groups = currentUser?.signInUserSession?.accessToken?.payload['cognito:groups'] || [];
-//       return groups;
-//     } catch (error) {
-//       console.error('Error fetching user groups:', error);
-//       return [];
-//     }
-//   };
+  useEffect(() => {
+    const updateRoles = async () => {
+      setIsLoading(true);
+      if (isAuthenticated) {
+        try {
+          const session = await fetchAuthSession();
+          const accessToken = session.tokens?.accessToken;
+          if (!accessToken) {
+            setIsAdmin(false);
+            setIsUser(false);
+            return;
+          }
+          const groups = accessToken.payload['cognito:groups'] as string[] || [];
+          setIsAdmin(groups.includes('admin'));
+          setIsUser(groups.includes('user'));
+        } catch (error) {
+          console.error('Error fetching user groups:', error);
+          setIsAdmin(false);
+          setIsUser(false);
+        }
+      } else {
+        setIsAdmin(false);
+        setIsUser(false);
+      }
+      setIsLoading(false);
+    };
 
-//   const checkIfAdmin = async (): Promise<boolean> => {
-//     const groups = await getUserGroups();
-//     return groups.includes('admin');
-//   };
+    updateRoles();
+  }, [isAuthenticated]);
 
-//   const checkIfUser = async (): Promise<boolean> => {
-//     const groups = await getUserGroups();
-//     return groups.includes('user');
-//   };
-
-//   return {
-//     user,
-//     isAuthenticated,
-//     checkIfAdmin,
-//     checkIfUser,
-//     signOut,
-//   };
-// };
+  return {
+    user,
+    isAuthenticated,
+    isAdmin,
+    isUser,
+    isLoading,
+    signOut,
+  };
+};

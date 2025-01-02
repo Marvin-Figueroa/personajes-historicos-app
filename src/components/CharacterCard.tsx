@@ -5,12 +5,14 @@ import fallbackImg from "/placeholder.jpg";
 import { useState } from "react";
 import { Character } from "../services/characterService";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
 interface Props {
   character: Character;
   onDelete: (id: number) => void;
 }
 const CharacterCard = ({ character, onDelete }: Props) => {
+  const { isAdmin } = useAuth();
   const navigate = useNavigate();
   const [imgSrc, setImgSrc] = useState(character.imageUrl);
 
@@ -31,13 +33,15 @@ const CharacterCard = ({ character, onDelete }: Props) => {
             aria-label="Details"
             onClick={() => navigate(`/characters/${character.id}`)}
           />
-          <Button
-            icon="pi pi-trash"
-            label="Delete"
-            severity="danger"
-            aria-label="Delete"
-            onClick={() => onDelete(character.id)}
-          />
+           {isAdmin && (
+            <Button
+              icon="pi pi-trash"
+              label="Delete"
+              severity="danger"
+              aria-label="Delete"
+              onClick={() => onDelete(character.id)}
+            />
+          )}
         </div>
       }
       header={

@@ -2,7 +2,7 @@ import { isRouteErrorResponse, Link, useRouteError } from "react-router-dom";
 import { Image } from "primereact/image";
 import NotFoundImage from "../assets/undraw-page-not-found.svg";
 import UnexpectedErrorImage from "../assets/unexpected-error.png";
-import NavBar from "../components/NavBar";
+import { NavBar } from "../components/NavBar";
 import Footer from "../components/Footer";
 
 const NotFoundPage = () => {

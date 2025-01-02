@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Layout } from '../components/Layout';
-import  CharactersPage  from '../pages/CharactersPage';
+import { MainLayout } from '../components/MainLayout';
+import CharactersPage from '../pages/CharactersPage';
 import CharacterDetailPage from '../pages/CharacterDetailPage';
 import NewCharacterPage from '../pages/NewCharacterPage';
 import { LoginPage } from '../pages/LoginPage';
@@ -11,7 +11,7 @@ import { ProtectedRoute } from '../components/ProtectedRoute';
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <MainLayout />,
     errorElement: <NotFoundPage />,
     children: [
       {
@@ -30,14 +30,14 @@ export const router = createBrowserRouter([
         path: "characters/:id",
         element: <CharacterDetailPage />,
       },
-      {
-        path: "login",
-        element: <LoginPage />,
-      },
-      {
-        path: "unauthorized",
-        element: <UnauthorizedPage />,
-      },
     ],
+  },
+  {
+    path: "login",
+    element: <LoginPage />,
+  },
+  {
+    path: "unauthorized",
+    element: <UnauthorizedPage />,
   },
 ]);
